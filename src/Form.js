@@ -10,14 +10,20 @@ export default function Form(props){
 
     function addJokeToList(){
   props.setJokes([...props.jokes, props.displayJoke])
-       // return <ListItem jokes={jokes} setJokes={setJokes}/>
        }
+
+       function handleDelete(){
+        props.setJokes([]);
+    }
    
     return(
         <>
 
         <button onClick={handleClick}>Get a Hilarious Joke</button>
         <button onClick={addJokeToList}>Add Hilarious Joke to List</button>
+        <br />
+        <button onClick={handleDelete}>Delete All Jokes</button>
+
         {props.displayJoke}
      {/* // <div>{props.jokes}</div>  */}
         </>
