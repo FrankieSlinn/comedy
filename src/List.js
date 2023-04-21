@@ -1,17 +1,27 @@
 import ListItem from "./ListItem";
 
-export default function List(props){
-    console.log("listprops", props)
+import Form from "./Form"
 
-    const jokeItems=props.jokes.map(function(item, index){console.log("item in list", props.jokes); return <ListItem jokeItem={item} key={index} index={index} jokeList={props.jokes} setJokes={props.setJokes}/>})
-    let jokeList=[props.jokes]
+export default function List(props){
+
+
+const jokeItems=props.jokes.map(function(item, index){//console.log("item in list", props.jokes);
+    return <ListItem handleSelectDeleteChange={props.handleSelectDeleteChange}id={index} setId={props.setId} jokeItem={item} jokes={props.jokes} setChecked={props.setChecked} checked={props.checked} key={index} index={index} jokeList={props.jokes} setJokes={props.setJokes}  checkedList={props.checkedList} setCheckedList={props.setCheckedList} />
+})
+   //let jokeList=[props.jokes]
+
+
+    
   
 
     return (
 <>
 <ul >
     {jokeItems}
-    {jokeList=props.jokes}
+   
+    {/* {objJokes=props.objJokes} */}
+    {/* //{setObjJokes=props.setObjJokes} */}
+
   
 
 

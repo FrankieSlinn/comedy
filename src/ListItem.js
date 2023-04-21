@@ -1,36 +1,37 @@
 import EditForm from "./EditForm";
 import {useState} from "react";
 export default function ListItem(jokeItems){
-    function log(){
-        //console.log("start works")
-    }
+//console.log("jokeItems in jokeItems", jokeItems)
+
+let selectJokeList=[...jokeItems.jokeList];
 const [star, setStar]=useState(false);
 const [changeItem, setChangeItem]=useState(false);
 const[showEditForm, setShowEditForm]=useState(false);
 
+const[jokeChecked, setJokeChecked]=useState({});
+
+const[idList, setIdList]=useState([])
+
 const[newJokeList, setNewJokeList]=useState(jokeItems.jokeList);
-//jokeItems.setJokes(newJokeList);
-let id=jokeItems.index;
+
+
+jokeItems.setId(jokeItems.index)
+let isChecked=jokeItems.isChecked;
 let editedJokeList=[];
+
 
 function removeItem(){
 let newItem = [...jokeItems.jokeList];
-newItem.splice(id,1)
-console.log("spliced newItem", newItem)
+newItem.splice(jokeItems.id,1)
 jokeItems.setJokes(newItem); 
 }
 function handleJokeChanges(e){
     e.preventDefault();
-    console.log("e.target.value", e.target.value)
     let editedJoke=e.target.value;
     let editedJokeList=[...jokeItems.jokeList]
-    let spliceId=id+1;
-    let newEditedJokeList=[editedJokeList.splice(id,0,editedJoke)];
-    console.log("edited jokelist, deditedJoke", editedJokeList, editedJoke); 
-    console.log("id in edited joke", id)
+    let spliceId=jokeItems.id+1;
+    let newEditedJokeList=[editedJokeList.splice(jokeItems.id,0,editedJoke)];
     editedJokeList.splice(spliceId,1);
-    console.log("editedJoke after splice", editedJokeList)
-    console.log("edited joke with id", editedJokeList[id])
     jokeItems.setJokes(editedJokeList); 
     editedJokeList=[];
     editedJoke="";
@@ -41,14 +42,54 @@ function handleFormSubmit(e) {
   
     //props.addSkill(newSkill);
   }
+//console.log("jokeItems.checkedList before function", jokeItems.jokes[jokeItems.id])
+ 
+  function captureChecks(e){
+    console.log("jokeitems.jokes", jokeItems.jokes)
+    console.log("jokeItems.jokes[id]", jokeItems.id)
+  
+    let itemChecked=e.target.checked;
+    console.log("itemChecked", itemChecked)
+    if(itemChecked==true){
+      console.log("true")
+      if(!jokeItems.checkedList.includes(jokeItems.jokes[jokeItems.id])){
+        console.log("included")
+        jokeItems.setCheckedList([...jokeItems.checkedList, jokeItems.jokes[jokeItems.id]])
+        console.log("jokeItems.checkedList true", jokeItems.checkedList)
+      }
+
+    }
+   if(itemChecked==false){
+    console.log("false")
+    if(jokeItems.checkedList.includes(jokeItems.jokes[jokeItems.id])){
+      console.log("in list")
+      jokeItems.setCheckedList(jokeItems.checkedList.filter((item)=> item!=jokeItems.joke[jokeItems.id]))
+      console.log("jokeItems.checkedList", jokeItems.checkedList)
+    }
+    
+   }
+   
+
+  }
+
+
+
+
+ 
     return(
-     
-        // style={{color: "red"}}
+     <>
+
         <li className="jokeListed" id={jokeItems.index}>
-            {/* //     style={{
-        backgroundColor: props.index % 2 ? "lavender" : "hotpink",
-      }} */}
-      {jokeItems.jokeItem}
+
+      {jokeItems.jokeItem} 
+      <input type="checkbox" index={jokeItems.id} onClick={(e)=>{{captureChecks(e)}
+        jokeItems.setChecked(!jokeItems.checked);     console.log("checked in function", jokeItems.checked, jokeItems.id
+        ); jokeItems.setId(jokeItems.index); console.log("checked, id", jokeItems.checked, jokeItems.id)}}  onChange={jokeItems.handleSelectDeleteChange}/>
+    
+{/* // jokeItems.checked?jokeItems.setCheckedList([...jokeItems.checkedList, jokeItems.id]):jokeItems.checkedList.includes(jokeItems.id)?jokeItems.checkedList.filter((item)=> item!=jokeItems.id):null; */}
+      
+  
+      <label id={jokeItems.id}  /> 
           <button className="star" style={{color:star?"yellow":"#ccc"}}onClick={()=>{setStar(!star)}}> &#9733;</button>
           {/* //onClick={() => setShowTodos(!showTodos)}>{showTodos ? 'HIDE' : 'SHOW'} */}
        
@@ -63,6 +104,8 @@ function handleFormSubmit(e) {
         <button className="submitEdit" type="submit" style={{display:changeItem?"inline-block":"none"}}>Submit</button>
         </form>
          </li>
+      
+         </>
     
     )
 }
