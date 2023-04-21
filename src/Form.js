@@ -13,6 +13,7 @@ export default function Form(props){
 
     function addJokeToList(){
   props.setJokes([...props.jokes, props.displayJoke])
+  props.setDisplayJoke("Find Another Comedy Gem")
        }
 
        function handleDelete(){
@@ -39,21 +40,19 @@ let filteredList=checkedListCopy.forEach(element => {
 
     return(
         <>
-
-        <button onClick={handleClick}>Get a Hilarious Joke</button>
+        <div className="displayJoke">
+         {props.displayJoke }
+         </div>
+         <br />
+        <button onClick={handleClick}>Get a Hilarious Joke</button>&nbsp;&nbsp;
         <button onClick={addJokeToList}>Add Hilarious Joke to List</button>
         <br />
-        <button onClick={deleteSelected}>Delete Selected Jokes</button>
+        <br />
+        <button onClick={deleteSelected}>Delete Selected Jokes</button>&nbsp;&nbsp;
         <button onClick={handleDelete}>Delete All Jokes</button>
 
-        {props.displayJoke}
-        {ListItem}
+       
+</>
 
-
-    
-
-
-     {/* // <div>{props.jokes}</div>  */}
-        </>
     )
 }
