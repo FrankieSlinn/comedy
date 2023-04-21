@@ -4,6 +4,7 @@ export default function Navigation(){
     return(
         <>
         <nav>
+            <br />
         <Link to="/">Homepage</Link>
         &nbsp; | &nbsp;
         <Link to="/about">About</Link>

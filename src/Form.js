@@ -12,7 +12,7 @@ export default function Form(props){
        }
 
     function addJokeToList(){
-  props.setJokes([...props.jokes, props.displayJoke])
+ if(props.displayJoke!=="Find Another Comedy Gem") {props.setJokes([...props.jokes, props.displayJoke])}
   props.setDisplayJoke("Find Another Comedy Gem")
        }
 

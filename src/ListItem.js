@@ -66,6 +66,7 @@ export default function ListItem(jokeItems) {
     <>
       <li className="jokeListed" id={jokeItems.index} style={{listStyleType:"none"}}>
         {jokeItems.jokeItem}
+        <div>
         <input
           type="checkbox"
           index={jokeItems.id}
@@ -83,7 +84,7 @@ export default function ListItem(jokeItems) {
 
         <label id={jokeItems.id} />
         <button
-          className="star"
+          className="star fave"
           style={{ color: star ? "yellow" : "#ccc" }}
           onClick={() => {
             setStar(!star);
@@ -92,18 +93,20 @@ export default function ListItem(jokeItems) {
           {" "}
           &#9733;
         </button>
+     
         <button className="remove" onClick={removeItem}>
-          Remove
+        &#10006;
         </button>
-        &nbsp;&nbsp;
+     
         <button
           className="edit"
           onClick={() => {
             setChangeItem(true);
           }}
         >
-          Edit
+          &#x270e;
         </button>
+        </div>
         <br />
         <form
           className="editForm"

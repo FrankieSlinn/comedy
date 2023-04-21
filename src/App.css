@@ -1,6 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Sigmar&display=swap');
+
+
+/* Colors: 
+/* Purple: */
+/* //#7f117a */
+/* Harvet Gold - #da9100
+Yellow - #fcd407 */ 
+
+body{
+  background-color:#78184A;
+  color: #ccc;
+  font-family: 'Sigmar', cursive;
+  letter-spacing: 0.12rem;
+}
 .App {
   text-align: center;
 }
+h1{color: #ffdf00;}
 
 .App-logo {
   height: 40vmin;
@@ -36,15 +52,49 @@
     transform: rotate(360deg);
   }
 }
-.star{
+button{
+  font-weight: 700;
+  font-size: 1rem;
+  color: #281e5d;
+  background-color:#fc90ac;
+  border-radius: 5px;
+  padding: 0.5rem;
+  border: solid 2px #281e5d;;
+}
+.star, .remove, .edit{
   background-color: transparent;
   border: none;
 }
+.remove, .edit{
+  color: #ccc;
+  font-size: 1.2rem;
+}
+.fave{
+  font-size: 1.5rem;
+}
+
 .displayJoke{
   font-weight: 700;
+  color:#fcd407;
 }
-p{margin: 0 2rem}
+p{margin: 0 4rem}
+a{
+ color: #fcd407;
+}
 
 a:hover{
   color: hotpink;
 }
+.copy{
+  color: #ffdf00;
+}
+.about{
+  color: hotpink;
+}
+.aboutPar{
+  color: #ccc;
+}
+.aboutH3{
+  color: #ffdf00;
+}
+
