@@ -43,3 +43,8 @@
 .displayJoke{
   font-weight: 700;
 }
+p{margin: 0 2rem}
+
+a:hover{
+  color: hotpink;
+}
