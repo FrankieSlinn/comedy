@@ -1,10 +1,13 @@
-# Getting Started with Create React App
+# Comedy Pro
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Inspiration
 
-## Available Scripts
-
-In the project directory, you can run:
+The site was inspired by me having done standup comedy for a number of years. It's a way of coming up with a comedy routine
+without any time or effort by using the "Dad Joke" generator. 
+The "About" Section describes the joke generator as the best thing since sliced bread. Use cases include: 
+-Impressing a first date / your inlaws
+-Giving a wedding speech
+-Being the life and soul of a party
 
 ### `npm start`
 
