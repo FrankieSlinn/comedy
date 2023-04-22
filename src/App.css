@@ -66,6 +66,18 @@ button{
   padding: 0.5rem;
   border: solid 5px #c54b8c;
 }
+button:hover{
+  cursor: pointer;
+}
+.buttonMain{
+  width: 20rem;
+  height: 3rem;
+}
+img{
+  border-radius: 5px;
+ width: 18rem;
+ height: 32rem;
+}
 .star, .remove, .edit{
   background-color: transparent;
   border: none;

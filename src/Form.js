@@ -44,12 +44,12 @@ let filteredList=checkedListCopy.forEach(element => {
          {props.displayJoke }
          </div>
          <br />
-        <button onClick={handleClick}>Get a Hilarious Joke</button>&nbsp;&nbsp;
-        <button onClick={addJokeToList}>Add Hilarious Joke to List</button>
+        <button className="buttonMain" onClick={handleClick}>Get a Hilarious Joke</button>&nbsp;&nbsp;
+        <button className="buttonMain" onClick={addJokeToList}>Add Hilarious Joke to List</button>
         <br />
         <br />
-        <button onClick={deleteSelected}>Delete Selected Jokes</button>&nbsp;&nbsp;
-        <button onClick={handleDelete}>Delete All Jokes</button>
+        <button className="buttonMain" onClick={deleteSelected}>Delete Selected Jokes</button>&nbsp;&nbsp;
+        <button className="buttonMain" onClick={handleDelete}>Delete All Jokes</button>
 
        
 </>
