@@ -52,14 +52,19 @@ h1{color: #ffdf00;}
     transform: rotate(360deg);
   }
 }
+h1{
+  letter-spacing: 0.2rem;
+}
 button{
   font-weight: 700;
   font-size: 1rem;
+  font-family: 'Sigmar', cursive;
+  letter-spacing: 0.12rem;
   color: #281e5d;
   background-color:#fc90ac;
   border-radius: 5px;
   padding: 0.5rem;
-  border: solid 2px #281e5d;;
+  border: solid 5px #c54b8c;
 }
 .star, .remove, .edit{
   background-color: transparent;
