@@ -13,11 +13,20 @@ export default function Homepage(){
     let [displayJoke, setDisplayJoke] = useState(["Waiting for Joke"]);
   
     function fetchAPI(){
-      fetch('https://icanhazdadjoke.com/slack')
-      .then((response)=>response.json())
-      .then((results)=>{setDisplayJoke(displayJoke=results.attachments[0].text);})
-      .catch((error)=>console.log("err", error))
+        {APICall()}
       }
+
+      useEffect(function(){
+        {APICall()}
+      },[])
+
+      function APICall(){
+        fetch('https://icanhazdadjoke.com/slack')
+        .then((response)=>response.json())
+        .then((results)=>{setDisplayJoke(displayJoke=results.attachments[0].text);})
+        .catch((error)=>console.log("err", error))
+      }
+
     return(
         <>
         <Header />

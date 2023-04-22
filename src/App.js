@@ -1,6 +1,4 @@
 import logo from './logo.svg';
-
-
 import {Routes, Route, useParams} from "react-router-dom";
 import {useState, useEffect} from "react";
 import './App.css';
@@ -13,12 +11,6 @@ import Footer from "./Footer";
 import About from "./About";
 
 function App() {
-
-
-  //Set Initial State of Jokes
-
-
-
   return (
     <div className="App">
          <Navigation />
