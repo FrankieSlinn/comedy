@@ -9,8 +9,6 @@ export default function Navigation(){
         &nbsp; | &nbsp;
         <Link to="/about">About</Link>
         &nbsp; | &nbsp;
- 
-     
        </nav>
        </>
     )
