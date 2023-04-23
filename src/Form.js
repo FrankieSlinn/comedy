@@ -31,7 +31,7 @@ let filteredList=checkedListCopy.forEach(element => {
     checkedListCopy=[]
   })
  
-  console.log("jokes", props.jokes)
+
   
 
  }
@@ -47,9 +47,7 @@ let filteredList=checkedListCopy.forEach(element => {
         <br />
         <br />
         <button className="buttonMain" onClick={deleteSelected}>Delete Selected Jokes</button>&nbsp;&nbsp;
-        <button className="buttonMain" onClick={handleDelete}>Delete All Jokes</button>
-
-       
+        <button className="buttonMain" onClick={handleDelete}>Delete All Jokes</button>      
 </>
 
     )

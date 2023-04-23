@@ -36,14 +36,14 @@ The site utilised React with CSS. The React Router was installed via NPM to crea
 ### Core Requirements
 The below requirements were provided by General Assembly which were met by the site. 
 
-	![CoreRequirements](src/CoreRequirements.png)
+	![CoreRequirements](src/Pics/CoreRequirements.png)
 
 ### Layout
 
 The layout was designed with the spirit of dad jokes in mind. A picture of Tommy Cooper was added to represent 
 an older comedian using cheesy jokes(I have no idea what his comedy's like but his image suggests that could be his comedy style). The design is evocative of the 70's when Tommy Cooper was a regular performer. 
 
-![Layout](src/ComedyProLayout.png)
+![Layout](src/Pics/ComedyProLayout.png)
 
 The colour scheme was taken from a palette of pink, purple and yellow shades found on the internet as recommended colors that would complement each other.
 
@@ -51,11 +51,11 @@ The colour scheme was taken from a palette of pink, purple and yellow shades fou
 
 The first stage of planning involved creating a wireframe using Figma. 
 
-![Wireframe](src/ComedianAppWireframe.png)
+![Wireframe](src/Pics/ComedianAppWireframe.png)
 
 Pseudocode was then produced. As the project evolved the functionality ended up deviated from this pseudocode. 
 
-![PseudoCode](src/Pseudocode.png)
+![PseudoCode](src/Pics/Pseudocode.png)
 
 ## Coding Process
 
@@ -67,15 +67,15 @@ In the List Component, the array of jokes was mapped to split each joke into a s
 
 The remove item function was a simple matter of copying the jokes list, splicing the value from the list and setting the jokes list to the list with the item removed. 
 
-![RemoveItem](src/RemoveItem.png)
+![RemoveItem](src/Pics/RemoveItem.png)
 
 Selecting a deleted item was more complex. To delete selected items a list of IDs was compiled. Whenever a checkbox was checked an id was be added to the list.  If the user clicked the button to "delete selected" the jokelist was set to be updated, splicing the items that weren't checked. The list of checked items was then set to be an empty array. The list was provided to the Form Component via the React useState Hook. This hook was employed whenever data needed to be provided to child components from their parents. 
 
-![DeleteSelected](src/DeleteSelected.png)
+![DeleteSelected](src/Pics/DeleteSelected.png)
 
 The API data was retrieved using a fetch command. React's useEffect Hook  was employed to prevent the API from running too many times.
 
-![FetchAPI](src/FetchAPI.png)
+![FetchAPI](src/Pics/FetchAPI.png)
 
 Throughout the project frequent commits were made for a strong version control.
 
@@ -107,6 +107,8 @@ A bug was found after checked items were removed. It was observed that items wer
 As mentioned above there was also an issue with the deployment.
 
 ### Future Improvements
+
+As a general improvement I would like to make the code neater / more organised, maybe by putting all the useState parameters and functions in the same component.
 
 In the future I would like to create a page to display favourite jokes only. This would involve passing parameters to different pages which is something I would like to get experience in. 
 

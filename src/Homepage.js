@@ -31,8 +31,6 @@ export default function Homepage(){
         <>
         <Header />
           <List jokes={jokes} setJokes={setJokes}  id={id} setId={setId} checked={checked} setChecked={setChecked} checkedList={checkedList} setCheckedList={setCheckedList}/>
-        <br />
-        <br />
       <Form checkedList={checkedList} setCheckedList={setCheckedList} jokes={jokes} setJokes={setJokes}  fetchAPI={fetchAPI} displayJoke={displayJoke} setDisplayJoke={setDisplayJoke} checked={checked} setChecked={setChecked}/>
       <br />
         <Footer />
