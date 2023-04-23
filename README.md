@@ -22,20 +22,20 @@ The site utilised React with CSS. The React Router was installed via NPM to crea
 ### Core Requirements
 The below requirements were provided by General Assembly which were met by the site. 
 
-	![CoreRequirements](Core_Requirements.png)
+	![CoreRequirements](src/CoreRequirements.png)
 
 ### Layout
 
 The layout was designed with the spirit of dad jokes in mind. A picture of Tommy Cooper was added to represent 
 an older comedian using cheesy jokes(I don't know his comedy well but his image suggests that could be his comedy style). The design is evocative of the 70's when Tommy Cooper was a regular performer. 
-![Layout](ComedyProLayout.png)
+![Layout](src/ComedyProLayout.png)
 The colour scheme was taken from a palette of pink, purple and yellow shades found on the internet as recommended colors that would complement each other.
 
 ### Planning
 
 The first stage of planning involved creating a wireframe using Figma. 
 
-![Wireframe](ComedianAppWireframe.png)
+![Wireframe](src/ComedianAppWireframe.png)
 
 Pseudocode was then produced. As the project evolved the functionality ended up deviated from this pseudocode. 
 
@@ -52,10 +52,13 @@ The React Router was imported and used to create different page views. This was 
 In the List Component, the array of jokes was mapped to split each joke into a separate List Item. The full List Item content was then created in the List Item Component. 
 
 The remove item function was a simple matter of copying the jokes list, splicing the value from the list and setting the jokes list to the list with the item removed. 
+
 ![RemoveItem](src/RemoveItem.png)
 
 
 Selecting a deleted item was more complex. To delete selected items a list of IDs was compiled. Whenever a checkbox was checked an id was be added to the list.  If the user clicked the button to "delete selected" the jokelist was set to be updated, splicing the items that weren't checked. The list of checked items was then set to be an empty array. The list was provided to the Form Component via the React useState Hook. This hook was employed whenever data needed to be provided to child components from their parents. 
+
+![RemoveItem](src/DeleteSelected.png)
 
 The API data was retrieved using a fetch command. React's useEffect Hook  was employed to prevent the API from running too many times.
 
@@ -63,26 +66,36 @@ Throughout the project frequent commits were made for a strong version control.
 
 
 
-### Code Splitting
+### Challenges
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The project was not as advanced as I would have wanted due to timeframes, even with an extension I only had three full days to work on this, even with an extension. This is why the technical focus was on the core requirements and basic layout only. 
 
-### Analyzing the Bundle Size
+Technically, a key challenge was deleting selected items. Originally the setState hook parameters were set up in the child which caused a number of issues. 
+A key learning was that the setState should be defined at a parent level and that a setState is the only way to provide information from a parent to a child. After this was known the delete selected items functionality could be implemented. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The deployment was also challenging. Instructions for deploying React with Github were followed but the issue remained. An issue with running React on the localhost has been ongoing which made progress. Although a workaround was used this slowed down progress with React. 
 
-### Making a Progressive Web App
+### Wins / Learnings / Open Points
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+On a personal note I found that my understanding of React was much improved while doing the project. Due to the issue with deleting selected items I was able to take some more critical learnings away. 
 
-### Advanced Configuration
+Some issues were found when trying to create a "Favourites Page"(since abandoned) which uncovered further gaps in my knowledge, mainly: how can parameters be passed between different pages which I intend to learn asap. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+I have found out about Redux which looks extremely useful which I will investigate further when I have the time. 
 
-### Deployment
+An issue with using indices to delete items also raised the need to investigate how custom IDs can be created for items. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Bugs
 
-### `npm run build` fails to minify
+A bug was found after checked items were removed. It was observed that items were automatically ticked after this removal. It is believed that this issue is due to using the joke items' index as an id as opposed to using a unique ID. Another potential solution may be to remove any default checkbox checking. Due to time constraints the root cause could not be fully determined. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+As mentioned above there was also an issue with the deployment.
+
+### Future Improvements
+
+In the future I would like to create a page to display favourite jokes only. This would involve passing parameters to different pages which is something I would like to get experience in. 
+
+I would also play around with the layout to make it neater and more user-friendly. To utilise the app(in case anyone might ever have the need for bad dad jokes) the site should be made responsive. 
+
+It could also be fun for all the jokes to be read by the user's machine with canned laughter after each joke. 
+
