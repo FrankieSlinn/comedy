@@ -1,0 +1,35 @@
+Comedian – Pseudocode
+SETSTATE Jokes in App Component
+CREATE Form Component
+CREATE Input
+CREATE Submit Button
+CREATE Delete All Button
+CREATE Value as Variable
+CREATE List Component
+CREATE ListItem Component
+IMPORT ListItem into List
+IMPORT List into App Component
+INCLUDE Jokes in List in App Return Statement
+IMPORT Form into List Component
+FETCH API
+Extract Joke from API
+On AddToList Button Click Display Joke as List Item
+SET Jokes to include Joke
+INCLUDE Joke in ListItem
+INCLUDE ListItem in List
+ADD Edit Button to ListItem
+ADD Delete Button to ListItem
+Delete Button onClick REMOVE Joke from List
+CREATE Edit Form
+Import Edit Form Into List Item
+SHOW Text Field with Entry on Edit Button Click
+SHOW Save Button in Edit Form 
+Save Button onClick SET Jokes to editedJoke 
+SHOW Discard Button 
+On Button Click HIDE Edit Form
+Delete All Button onClick REMOVE All Items from List
+
+
+
+
+

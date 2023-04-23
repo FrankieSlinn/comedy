@@ -1,19 +1,33 @@
 # Comedy Pro
 
+## About
+
+This site was created as a General Assembly individual project on React. 
+
+The user can generate a joke via an API and to add it to their joke list if they like it. A joke list can be modified by editing a joke, removing a joke or by deleting selected jokes. The user also has the option of marking their favourite jokes by selecting a star icon. 
+
 ## Inspiration
 
-This site was created as a General Assembly individual project on React. It was inspired by me having done standup comedy for a number of years. It's a way of coming up with a comedy routine
-without any time or effort by using the "Dad Joke" generator. 
+The project was inspired by me having done standup comedy for a number of years. It's a way of coming up with a comedy routine without any time or effort by using the "Dad Joke" generator. 
+
 In keeping with the spirit of dad jokes, the "About" Section describes the joke generator as the best thing since sliced bread. Use cases include: 
 -Impressing a first date / your inlaws
 -Wowing the audience with a wedding speech
 -Transforming oneself from a wallflower the life and soul of a party
-In case the site takes off(it won't) disclaimers will be added such as me not taking liability for physical injuries inflicted by audience members throwing fruit at the comedian or interpersonal issues caused by exasperated friends and family. 
+
+In case the site takes off(it won't) disclaimers will be added to include me not taking liability for:
+-interpersonal issues caused by exasperated friends and family or:
+-physical injuries inflicted by audience members throwing rotten fruit at the comedian. 
+ 
+
+## Deployment Link
+
+https://pages.git.generalassemb.ly/franziska-kissling/comedy/
 
 ### Timelines
 
 As I had to go to Switzerland for five days where I was busy with a house move during the project week, timelines were tight. 
-The key focus was therefore on the MVP and a basic styling as opposed to implementing suggested additional features. The core requirements were met. 
+The key focus was therefore on the MVP and a basic styling as opposed to implementing suggested additional features. The core requirements have all been met. 
 
 ### Technologies Used
 
@@ -27,8 +41,10 @@ The below requirements were provided by General Assembly which were met by the s
 ### Layout
 
 The layout was designed with the spirit of dad jokes in mind. A picture of Tommy Cooper was added to represent 
-an older comedian using cheesy jokes(I don't know his comedy well but his image suggests that could be his comedy style). The design is evocative of the 70's when Tommy Cooper was a regular performer. 
+an older comedian using cheesy jokes(I have no idea what his comedy's like but his image suggests that could be his comedy style). The design is evocative of the 70's when Tommy Cooper was a regular performer. 
+
 ![Layout](src/ComedyProLayout.png)
+
 The colour scheme was taken from a palette of pink, purple and yellow shades found on the internet as recommended colors that would complement each other.
 
 ### Planning
@@ -39,9 +55,7 @@ The first stage of planning involved creating a wireframe using Figma.
 
 Pseudocode was then produced. As the project evolved the functionality ended up deviated from this pseudocode. 
 
-[PseudoCode](src/ComedianPseudoCode.txt)
-
-
+![PseudoCode](src/Pseudocode.png)
 
 ## Coding Process
 
@@ -55,35 +69,36 @@ The remove item function was a simple matter of copying the jokes list, splicing
 
 ![RemoveItem](src/RemoveItem.png)
 
-
 Selecting a deleted item was more complex. To delete selected items a list of IDs was compiled. Whenever a checkbox was checked an id was be added to the list.  If the user clicked the button to "delete selected" the jokelist was set to be updated, splicing the items that weren't checked. The list of checked items was then set to be an empty array. The list was provided to the Form Component via the React useState Hook. This hook was employed whenever data needed to be provided to child components from their parents. 
 
-![RemoveItem](src/DeleteSelected.png)
+![DeleteSelected](src/DeleteSelected.png)
 
 The API data was retrieved using a fetch command. React's useEffect Hook  was employed to prevent the API from running too many times.
 
+![FetchAPI](src/FetchAPI.png)
+
 Throughout the project frequent commits were made for a strong version control.
-
-
 
 ### Challenges
 
-The project was not as advanced as I would have wanted due to timeframes, even with an extension I only had three full days to work on this, even with an extension. This is why the technical focus was on the core requirements and basic layout only. 
+The project was not as advanced as I would have wanted due to me having to go to Switzerland to help a family member. I therefore only had three full days to work on this, even with an extension. This is why the technical focus was on the core requirements and on the basic layout only. 
 
 Technically, a key challenge was deleting selected items. Originally the setState hook parameters were set up in the child which caused a number of issues. 
-A key learning was that the setState should be defined at a parent level and that a setState is the only way to provide information from a parent to a child. After this was known the delete selected items functionality could be implemented. 
+A key learning was that the setState should be defined at a parent level and that a setState is the only way to provide information from a parent to a child. With this knowledge the delete selected items functionality could be implemented. 
 
-The deployment was also challenging. Instructions for deploying React with Github were followed but the issue remained. An issue with running React on the localhost has been ongoing which made progress. Although a workaround was used this slowed down progress with React. 
+The deployment was also challenging. Instructions for deploying React with Github were followed but the issue remained. An issue with running React on the localhost has been ongoing which made progress. Although a workaround was used this slowed down progress with React. Hopefully at the time of you reading this the deployment link will work!
 
-### Wins / Learnings / Open Points
+### Wins / Learnings
 
-On a personal note I found that my understanding of React was much improved while doing the project. Due to the issue with deleting selected items I was able to take some more critical learnings away. 
+I found that my understanding of React was much improved while doing the project. Most of the core requirements could be implemented within a short time period. Due to the issue with deleting selected items I was able to take some more critical learnings away which have been referred to above. 
+
+### Open Points
 
 Some issues were found when trying to create a "Favourites Page"(since abandoned) which uncovered further gaps in my knowledge, mainly: how can parameters be passed between different pages which I intend to learn asap. 
 
-I have found out about Redux which looks extremely useful which I will investigate further when I have the time. 
+I have found out about Redux which looks extremely useful which I will investigate further when I have the time. Another goal for the future is to familiarise myself with Tailwind to hopefully make styling a lot easier. 
 
-An issue with using indices to delete items also raised the need to investigate how custom IDs can be created for items. 
+An issue with using indices to delete items has also raised the need to investigate how custom IDs can be created for items. 
 
 ### Bugs
 
