@@ -8,7 +8,7 @@ The user can generate a joke via an API and to add it to their joke list if they
 
 ## Inspiration
 
-The project was inspired by me having done standup comedy for a number of years. It's a way of coming up with a comedy routine without any time or effort by using the "Dad Joke" generator. 
+The project was inspired by me having been on the comedy circuit for a number of years. It's a way of coming up with a comedy routine without any time or effort by using the "Dad Joke" generator. If only it had existed in my comedy days! Then again, maybe that was a good thing it didn't. 
 
 In keeping with the spirit of dad jokes, the "About" Section describes the joke generator as the best thing since sliced bread. Use cases include: 
 -Impressing a first date / your inlaws
@@ -87,6 +87,8 @@ Technically, a key challenge was deleting selected items. Originally the setStat
 A key learning was that the setState should be defined at a parent level and that a setState is the only way to provide information from a parent to a child. With this knowledge the delete selected items functionality could be implemented. 
 
 The deployment was also challenging. Instructions for deploying React with Github were followed but the issue remained. An issue with running React on the localhost has been ongoing which made progress. Although a workaround was used this slowed down progress with React. Hopefully at the time of you reading this the deployment link will work!
+
+Also, when I work on the sofa my cat has a bad habit of walking over the keyboard. He didn't add any value to the code and I ended up having to undo a fair bit of damage. 
 
 ### Wins / Learnings
 
