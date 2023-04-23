@@ -1,50 +1,59 @@
 import { useState } from "react";
 export default function ListItem(jokeItems) {
-  //console.log("jokeItems in jokeItems", jokeItems)
 
-  let selectJokeList = [...jokeItems.jokeList];
+ //useState parameters for items only utilised in this child
   const [star, setStar] = useState(false);
   const [changeItem, setChangeItem] = useState(false);
 
+  //assigns the index to an id variable
   jokeItems.setId(jokeItems.index);
 
+  //triggered when the remove button next to a joke is clicked. 
+  //makes a copy of the jokelist.
+  //removes the item from the copy by its id. 
+  //sets the joke list to the list with the item removed.
   function removeItem() {
     let newItem = [...jokeItems.jokeList];
     newItem.splice(jokeItems.id, 1);
     jokeItems.setJokes(newItem);
   }
+
+ //triggered when the edit button next to a joke is clicked.
+ //gets the joke content from the input field. 
+ //makes a copy of the jokelist.
+ //adds the new content to the copy of the joke list. 
+ //deletes the old content from the copy of the joke list. 
+ //sets the joke list to the amended copy.
+ //sets the value of the edited joke and the joke list copy to empty values for future edits. 
   function handleJokeChanges(e) {
     e.preventDefault();
     let editedJoke = e.target.value;
     let editedJokeList = [...jokeItems.jokeList];
     let spliceId = jokeItems.id + 1;
-    let newEditedJokeList = [
-      editedJokeList.splice(jokeItems.id, 0, editedJoke),
-    ];
+    editedJokeList.splice(jokeItems.id, 0, editedJoke);
     editedJokeList.splice(spliceId, 1);
     jokeItems.setJokes(editedJokeList);
     editedJokeList = [];
     editedJoke = "";
   }
   
+  //Displays the edit input field and the submit button. 
   function handleFormSubmit(e) {
     e.preventDefault();
     setChangeItem(false);
   }
 
+  //Reads the input value of the checked box.
+  //If the item is checked and not on the checked list the joke is added to the checked list via the spread operator. 
+  //If an item is unchecked this is removed form the checklist via a filter function.
   function captureChecks(e) {
-    console.log("jokeitems.jokes", jokeItems.jokes);
-    console.log("jokeItems.jokes[id]", jokeItems.id);
-
     let itemChecked = e.target.checked;
-    console.log("itemChecked", itemChecked);
     if (itemChecked == true) {
-      console.log("true");
       if (!jokeItems.checkedList.includes(jokeItems.jokes[jokeItems.id])) {
         jokeItems.setCheckedList([
           ...jokeItems.checkedList,
           jokeItems.jokes[jokeItems.id],
-        ]);
+        ])
       }
     }
     if (itemChecked == false) {
@@ -53,7 +62,7 @@ export default function ListItem(jokeItems) {
           jokeItems.checkedList.filter(
             (item) => item != jokeItems.joke[jokeItems.id]
           )
-        );
+        )
       }
     }
   }
@@ -71,11 +80,8 @@ export default function ListItem(jokeItems) {
               captureChecks(e);
             }
             jokeItems.setChecked(!jokeItems.checked);
-            console.log("checked in function", jokeItems.checked, jokeItems.id);
             jokeItems.setId(jokeItems.index);
-            console.log("checked, id", jokeItems.checked, jokeItems.id);
           }}
-          onChange={jokeItems.handleSelectDeleteChange}
         />
 
         <label id={jokeItems.id} />
@@ -107,7 +113,7 @@ export default function ListItem(jokeItems) {
         <form
           className="editForm"
           onSubmit={handleFormSubmit}
-          style={{ display: changeItem ? "inline-block" : "none" }}
+          // style={{ display: changeItem ? "inline-block" : "none" }}
         >
           <input
             className="editInput"

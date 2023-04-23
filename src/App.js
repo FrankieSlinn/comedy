@@ -1,26 +1,21 @@
-import logo from './logo.svg';
-import {Routes, Route, useParams} from "react-router-dom";
-import {useState, useEffect} from "react";
-import './App.css';
+//import React Router to be able to set page views, implement navigation links
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
 import Homepage from "./Homepage";
 import Navigation from "./Navigation";
-import Form from "./Form";
-import List from "./List";
-import Header from "./Header";
-import Footer from "./Footer";
 import About from "./About";
 
+//Set page views
 function App() {
   return (
     <div className="App">
-         <Navigation />
+      <Navigation />
       <Routes>
-   <Route path="/" element={<Homepage />}/>
-   <Route path="/about" element={<About />}/>
-</Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
     </div>
   );
 }
 
 export default App;
-
