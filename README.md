@@ -36,7 +36,7 @@ The site utilised React with CSS. The React Router was installed via NPM to crea
 ### Core Requirements
 The below requirements were provided by General Assembly which were met by the site. 
 
-	![CoreRequirements](src/Pics/CoreRequirements.png)
+![CoreRequirements](src/Pics/CoreRequirements.png)
 
 ### Layout
 
