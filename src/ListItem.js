@@ -47,7 +47,7 @@ export default function ListItem(jokeItems) {
   //If an item is unchecked this is removed form the checklist via a filter function.
   function captureChecks(e) {
     let itemChecked = e.target.checked;
-    if (itemChecked == true) {
+    if (itemChecked === true) {
       if (!jokeItems.checkedList.includes(jokeItems.jokes[jokeItems.id])) {
         jokeItems.setCheckedList([
           ...jokeItems.checkedList,
@@ -55,7 +55,7 @@ export default function ListItem(jokeItems) {
         ]);
       }
     }
-    if (itemChecked == false) {
+    if (itemChecked === false) {
       if (jokeItems.checkedList.includes(jokeItems.jokes[jokeItems.id])) {
         jokeItems.setCheckedList(
           jokeItems.checkedList.filter(
