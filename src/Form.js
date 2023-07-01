@@ -44,7 +44,7 @@ export default function Form(props) {
       </button>
       &nbsp;&nbsp;
       <button className="buttonMain" onClick={addJokeToList}>
-        Add Hilarious Joke to List
+        Add Joke to List
       </button>
       <br />
       <br />
