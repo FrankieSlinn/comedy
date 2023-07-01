@@ -26,12 +26,11 @@ https://pages.git.generalassemb.ly/franziska-kissling/comedy/
 
 ### Timelines
 
-As I had to go to Switzerland for five days where I was busy with a house move during the project week, timelines were tight. 
-The key focus was therefore on the MVP and a basic styling as opposed to implementing suggested additional features. The core requirements have all been met. 
+As I had to go to Switzerland for five days where I was busy with a house move during the project week, timelines were tight as it left me with four full days to do the project.. The key focus was therefore on the MVP and a basic styling as opposed to implementing suggested additional features. The core requirements have all been met.   
 
 ### Technologies Used
 
-The site utilised React with CSS. The React Router was installed via NPM to create different page views. https://icanhazdadjoke.com was the API utilised for the site. It was edited via Visual Studio Code and version control was carried out via GitHub.
+The site utilised React with CSS, an external API and HTML. The React Router was installed via NPM to create different page views. https://icanhazdadjoke.com was the API utilised for the site. It was edited via Visual Studio Code and version control was carried out via GitHub.
  
 ### Core Requirements
 The below requirements were provided by General Assembly which were met by the site. 
@@ -45,7 +44,7 @@ an older comedian using cheesy jokes(I have no idea what his comedy's like but h
 
 ![Layout](src/Pics/ComedyProLayout.png)
 
-The colour scheme was taken from a palette of pink, purple and yellow shades found on the internet as recommended colors that would complement each other.
+The colour scheme was taken from a palette of pink, purple and yellow shades found on the internet as recommended colours that would complement each other.
 
 ### Planning
 
@@ -69,7 +68,7 @@ The remove item function was a simple matter of copying the jokes list, splicing
 
 ![RemoveItem](src/Pics/RemoveItem.png)
 
-Selecting a deleted item was more complex. To delete selected items a list of IDs was compiled. Whenever a checkbox was checked an id was be added to the list.  If the user clicked the button to "delete selected" the jokelist was set to be updated, splicing the items that weren't checked. The list of checked items was then set to be an empty array. The list was provided to the Form Component via the React useState Hook. This hook was employed whenever data needed to be provided to child components from their parents. 
+Selecting a deleted item was more complex. To delete selected items a list of IDs was compiled. Whenever a checkbox was checked an id was added to the list.  If the user clicked the button to "delete selected" the jokelist was set to be updated, splicing the items that weren't checked. The list of checked items was then set to be an empty array. The list was provided to the Form Component via the React useState Hook. This hook was employed whenever data needed to be provided to child components from their parents. 
 
 ![DeleteSelected](src/Pics/DeleteSelected.png)
 
@@ -86,7 +85,7 @@ The project was not as advanced as I would have wanted due to me having to go to
 Technically, a key challenge was deleting selected items. Originally the setState hook parameters were set up in the child which caused a number of issues. 
 A key learning was that the setState should be defined at a parent level and that a setState is the only way to provide information from a parent to a child. With this knowledge the delete selected items functionality could be implemented. 
 
-The deployment was also challenging. Instructions for deploying React with Github were followed but the issue remained. An issue with running React on the localhost has been ongoing which made progress. Although a workaround was used this slowed down progress with React. Hopefully at the time of you reading this the deployment link will work!
+The deployment was also challenging. Instructions for deploying React with GitHub were followed but the issue remained. An issue with running React on the localhost has been ongoing which made progress. Although a workaround was used this slowed down progress with React. Hopefully at the time of you reading this the deployment link will work!
 
 Also, when I work on the sofa my cat has a bad habit of walking over the keyboard. He didn't add any value to the code and I ended up having to undo a fair bit of damage. 
 
